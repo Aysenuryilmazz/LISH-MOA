@@ -1,5 +1,11 @@
 ## LISH-MOA
 
+### online notebooks:
+
+- [**EDA**](https://www.kaggle.com/hakkoz/ml-project-lish-moa-eda)
+- [**Classification with XGBOOST**](https://www.kaggle.com/hakkoz/ml-project-lish-moa-xgboost)
+- [**Classification with NN**](https://www.kaggle.com/hakkoz/ml-project-lish-moa-nn)
+
 The Connectivity Map, a project within the Broad Institute of MIT and Harvard, the Laboratory for Innovation Science at Harvard (LISH), and the NIH Common Funds Library of Integrated Network-Based Cellular Signatures (LINCS), present this challenge with the goal of advancing drug development through improvements to MoA prediction algorithms.
 
 > What is the Mechanism of Action (MoA) of a drug? And why is it important?
