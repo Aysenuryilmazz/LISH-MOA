@@ -1,5 +1,5 @@
 ## LISH-MOA Challenge  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/images/etki.jpg" height="150" /> 
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/etki.jpg" height="150" /> 
 
 Final Project for 2020-2021 Spring CSE4088 - Introduction to Machine Learning, CSE, Marmara University.
 
@@ -33,11 +33,11 @@ We tried out 2 algorithms **XGBoost** and a **Neural Network (Keras)**. The main
 However, these cross validators do not offer the ability to stratify multilabel data. [This iterative-stratification project](https://github.com/trent-b/iterative-stratification) offers implementations of **MultilabelStratifiedKFold** and we used it in our project.
 - **CV predictions**. Generally, out-of-fold predictions improves scores so that we used 5 fold to make predictions on test dataset and take average on them. This technique resembles bagging ensemble.
 - **Multilabel logloss** for the evaluation metric. M is the number of MoA and N is the number of samples.  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/master/resim3.png" height="150" />
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/resim3.png" height="150" />
 - Using **MultiOutputClassifier** of [Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html) together with XGBoost (that runs the same model for every target in a multilabel problem) we achieved **0.024239** score on the test set.
 - Deep Learning model had better scores: **0.0159892**. It uses same preprocessing steps with XGBoost and a **StandardScaler** on top of it.
-- It has 2 hidden layers with **WeightNormalization** along with **BatchNormalization** and **Dropout** layers (with rates of 0.2, 0.5 and 0.5).  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim4.png" weight="150" />
+- It has 2 hidden layers with **WeightNormalization** along with **BatchNormalization** and **Dropout** layers (with rates of 0.2, 0.5 and 0.5).   
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim4.png" weight="50" />
 - It also uses **ReduceLearningRateOnPlateau** with factor of 0.1 and patience of 3.
 - And finally the model is trained by **LookAhead** with **Adam** optimizer with sync period of 10, epoch number of 35 and batch size of 128. 
 
