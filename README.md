@@ -37,7 +37,7 @@ However, these cross validators do not offer the ability to stratify multilabel
 - Using **MultiOutputClassifier** of [Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html) together with XGBoost (that runs the same model for every target in a multilabel problem) we achieved **0.024239** score on the test set.
 - Deep Learning model had better scores: **0.0159892**. It uses same preprocessing steps with XGBoost and a **StandardScaler** on top of it.
 - It has 2 hidden layers with **WeightNormalization** along with **BatchNormalization** and **Dropout** layers (with rates of 0.2, 0.5 and 0.5).   
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim4.png" weight="50" />
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim4.png" height="50" />
 - It also uses **ReduceLearningRateOnPlateau** with factor of 0.1 and patience of 3.
 - And finally the model is trained by **LookAhead** with **Adam** optimizer with sync period of 10, epoch number of 35 and batch size of 128. 
 
