@@ -1,7 +1,7 @@
 ## LISH-MOA Challenge  
 <img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/etki.jpg" height="150" /> 
 
-Final Project for 2020-2021 Spring CSE4088 - Introduction to Machine Learning, CSE, Marmara University.
+Term Project for 2020-2021 Spring CSE4088 - Introduction to Machine Learning, CSE, Marmara University.
 
 - **Ayşenur YILMAZ** [@Aysenuryilmazz](https://github.com/Aysenuryilmazz)
 - **Mustafa Abdullah HAKKOZ** [@mustafahakkoz](https://github.com/mustafahakkoz)
