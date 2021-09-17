@@ -21,7 +21,7 @@ In this project, we aimed to work on an kaggle challenge [Mechanisms of Action (
 We tried out 2 algorithms **XGBoost** and a **Neural Network (Keras)**. The main ideas for the implementation are:
 
 - Transforming all columns to normal distribution with help of RankGauss (**QuantileTransformer**).  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/images/resim1.png" height="150" /> <img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/images/resim2.png" height="150" /> 
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim1.png" height="150" /> <img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim2.png" height="150" /> 
 
 - Adding **PCA** dimensions to dataset.  
 **original dataset** has 772 gene expressions, 100 cell expressions  
@@ -33,23 +33,23 @@ We tried out 2 algorithms **XGBoost** and a **Neural Network (Keras)**. The main
 However, these cross validators do not offer the ability to stratify multilabel data. [This iterative-stratification project](https://github.com/trent-b/iterative-stratification) offers implementations of **MultilabelStratifiedKFold** and we used it in our project.
 - **CV predictions**. Generally, out-of-fold predictions improves scores so that we used 5 fold to make predictions on test dataset and take average on them. This technique resembles bagging ensemble.
 - **Multilabel logloss** for the evaluation metric. M is the number of MoA and N is the number of samples.  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/images/resim3.png" height="150" />
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/master/resim3.png" height="150" />
 - Using **MultiOutputClassifier** of [Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html) together with XGBoost (that runs the same model for every target in a multilabel problem) we achieved **0.024239** score on the test set.
 - Deep Learning model had better scores: **0.0159892**. It uses same preprocessing steps with XGBoost and a **StandardScaler** on top of it.
 - It has 2 hidden layers with **WeightNormalization** along with **BatchNormalization** and **Dropout** layers (with rates of 0.2, 0.5 and 0.5).  
-<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/images/resim4.png" weight="150" />
+<img src="https://github.com/mustafahakkoz/LISH-MOA/blob/master/images/resim4.png" weight="150" />
 - It also uses **ReduceLearningRateOnPlateau** with factor of 0.1 and patience of 3.
 - And finally the model is trained by **LookAhead** with **Adam** optimizer with sync period of 10, epoch number of 35 and batch size of 128. 
 
-More information can be found in [project report](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf) and [presentation slides](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt).
+More information can be found in [project report](https://github.com/mustafahakkoz/LISH-MOA/blob/master/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf) and [presentation slides](https://github.com/mustafahakkoz/LISH-MOA/blob/master/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt).
 
 ---
 ### Repo Content
-- **Exploratory Data Analysis:** [ml-project-lish-moa-eda.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/ml-project-lish-moa-eda.ipynb)  
-- **XGBoost notebook:** [ml-project-lish-moa-xgboost.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/ml-project-lish-moa-xgboost.ipynb)   
-- **Neural Network notebook:** [ml-project-lish-moa-nn.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/ml-project-lish-moa-nn.ipynb)   
-- **Final Project Report:** [CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf)   
-- **Project Presentation:** [CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt](https://github.com/mustafahakkoz/LISH-MOA/blob/hakkoz/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt)   
+- **Exploratory Data Analysis:** [ml-project-lish-moa-eda.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/master/ml-project-lish-moa-eda.ipynb)  
+- **XGBoost notebook:** [ml-project-lish-moa-xgboost.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/master/ml-project-lish-moa-xgboost.ipynb)   
+- **Neural Network notebook:** [ml-project-lish-moa-nn.ipynb](https://github.com/mustafahakkoz/LISH-MOA/blob/master/ml-project-lish-moa-nn.ipynb)   
+- **Final Project Report:** [CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf](https://github.com/mustafahakkoz/LISH-MOA/blob/master/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_FinalReport.pdf)   
+- **Project Presentation:** [CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt](https://github.com/mustafahakkoz/LISH-MOA/blob/master/CSE4088_Aysenur_Yilmaz_Mustafa_Hakkoz_Presentation.ppt)   
 ---
 ### Online Notebooks
 
